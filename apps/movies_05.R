@@ -15,7 +15,7 @@ ui <- fluidPage(
   sidebarLayout(
     
     # Inputs: Select variables to plot ------------------------------
-    sidebarPanel(==
+    sidebarPanel(
       
       # Select variable for y-axis ----------------------------------
       selectInput(inputId = "y", 
@@ -52,6 +52,10 @@ ui <- fluidPage(
                   label = "Alpha:", 
                   min = 0, max = 1, 
                   value = 0.5),
+                  
+      # Set size of points ------------------------------------------
+      sliderInput("size", "Size:", 
+                  min=0, max=5, value=1),
       
       # Show data table ---------------------------------------------
       checkboxInput(inputId = "show_data",
@@ -78,7 +82,7 @@ server <- function(input, output) {
   output$scatterplot <- renderPlot({
     ggplot(data = movies, aes_string(x = input$x, y = input$y,
                                      color = input$z)) +
-      geom_point(alpha = input$alpha) +
+      geom_point(alpha = input$alpha, size = input$size) +
       labs(x = toTitleCase(str_replace_all(input$x, "_", " ")),
            y = toTitleCase(str_replace_all(input$y, "_", " ")),
            color = toTitleCase(str_replace_all(input$z, "_", " ")))
