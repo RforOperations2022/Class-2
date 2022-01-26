@@ -15,7 +15,7 @@ ui <- fluidPage(
   sidebarLayout(
     
     # Inputs: Select variables to plot ------------------------------
-    sidebarPanel(==
+    sidebarPanel(
       
       # Select variable for y-axis ----------------------------------
       selectInput(inputId = "y", 
