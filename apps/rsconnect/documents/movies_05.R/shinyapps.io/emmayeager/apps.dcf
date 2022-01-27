@@ -1,0 +1,13 @@
+name: apps
+title: apps
+username:
+account: emmayeager
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5521126
+bundleId: 5512707
+url: https://emmayeager.shinyapps.io/apps/
+when: 1643248285.9635
+lastSyncTime: 1643248285.9635
+asMultiple: FALSE
+asStatic: FALSE
